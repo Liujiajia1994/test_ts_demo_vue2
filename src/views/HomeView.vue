@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <!-- top_banner -->
-    <
     <!-- <div class="top_banner">top_banner</div> -->
     <!-- 输入框 -->
     <div class="input">输入框</div>
