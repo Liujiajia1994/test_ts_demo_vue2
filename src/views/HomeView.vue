@@ -2,37 +2,25 @@
   <div class="home">
     <!-- top_banner -->
     <top-banner></top-banner>
-    <!-- 输入框 -->
-    <div class="input">输入框</div>
-    <!-- <van-cell-group inset>
-      <van-field v-model="text" label="文本" placeholder="请输入用户名" />
-    </van-cell-group> -->
-    <!-- 期限&二选一  -->
-    <div class="menu_select">期限&二选一产品</div>
-    <!-- 功能banner-1 -->
-    <div class="middle_banner">功能banner-middle </div>
-    <!-- 列表 -->
-    <div class="main_list">列表</div>
-    <!-- 功能banner-2 -->
-    <div class="bottom_banner">功能banner-down </div>
-    <!-- 底部区间（营销&底部按钮） -->
-    <div class="footer">底部区间（营销&底部按钮） </div>
+    <formula-list></formula-list>
+    <!-- <van-button type="default">默认按钮</van-button> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import topBanner from "@/components/home/topBanner/index.vue"; // @ is an alias to /src
-// import { ref } from 'vue';
+import formulaList from "@/components/home/formulaList/index.vue";
+
 @Component({
   components: {
     topBanner,
+    formulaList,
   },
 })
 export default class HomeView extends Vue {
   message: string = "hello vue";
   text: string = "";
-  // topBannerType: string = "common"
   onClick(): void {
     window.alert(this.message)
   }
@@ -42,6 +30,7 @@ export default class HomeView extends Vue {
 .home {
   width: 100%;
   height: 100%;
+  background: linear-gradient(0deg, #edf3f9 50%,  #fff 100%)
 }
 .top_banner {
   width: 100%;
