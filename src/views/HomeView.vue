@@ -1,9 +1,12 @@
 <template>
   <div class="home">
     <!-- top_banner -->
-    <!-- <div class="top_banner">top_banner</div> -->
+    <top-banner></top-banner>
     <!-- 输入框 -->
     <div class="input">输入框</div>
+    <!-- <van-cell-group inset>
+      <van-field v-model="text" label="文本" placeholder="请输入用户名" />
+    </van-cell-group> -->
     <!-- 期限&二选一  -->
     <div class="menu_select">期限&二选一产品</div>
     <!-- 功能banner-1 -->
@@ -19,15 +22,17 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-// import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
-
+import topBanner from "@/components/home/topBanner/index.vue"; // @ is an alias to /src
+// import { ref } from 'vue';
 @Component({
   components: {
-    // HelloWorld,
+    topBanner,
   },
 })
 export default class HomeView extends Vue {
   message: string = "hello vue";
+  text: string = "";
+  // topBannerType: string = "common"
   onClick(): void {
     window.alert(this.message)
   }
@@ -37,7 +42,6 @@ export default class HomeView extends Vue {
 .home {
   width: 100%;
   height: 100%;
-  // overflow-y: scroll;
 }
 .top_banner {
   width: 100%;
@@ -75,3 +79,4 @@ export default class HomeView extends Vue {
   background-color: cadetblue;
 }
 </style>
+

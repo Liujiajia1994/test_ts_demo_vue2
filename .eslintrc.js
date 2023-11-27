@@ -15,5 +15,6 @@ module.exports = {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     "@typescript-eslint/no-inferrable-types": "off", // 关闭类型推断
+    "@typescript-eslint/no-explicit-any": ["off"], // 关闭any类型的警告。
   },
 };
