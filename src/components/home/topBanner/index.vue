@@ -1,27 +1,31 @@
 <template>
   <div class="container">
-    <img :src="bannerData.url" /> 
+    <img :src="bannerData.url" />
     <div class="banner_text">{{ bannerData.text }}</div>
   </div>
 </template>
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-@Component
-export default class topBanner extends Vue {
-  bannerData: any= {
-    url: require('./images/tip@2x.png'),
-    text: '这是一条横幅标语～'
-  }
-}
 
+<script lang="ts">
+import { defineComponent } from 'vue';
+export default defineComponent({
+  data() {
+    return {
+      bannerData: {
+        url: require('./images/tip@2x.png'),
+        text: '这是一条横幅标语～',
+      }
+    }
+  }
+})
 </script>
+
 <style lang="scss" scoped>
 .container {
   display: flex;
   align-items: center;
   background-color: white;
   margin-bottom: 10px;
-  >img {
+  > img {
     width: 27px;
     height: 27px;
     z-index: 1;

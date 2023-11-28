@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <!-- <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav> -->
-    <router-view />
+    <router-view></router-view>
   </div>
 </template>
 
+<script setup lang="ts">
+</script>
 <style lang="scss">
 #app {
   width: 100%;
@@ -17,7 +15,6 @@
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
-
 body {
   width: 100%;
   height: 100%;

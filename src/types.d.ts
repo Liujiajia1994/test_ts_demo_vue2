@@ -1,2 +1,6 @@
-interface Window {
+export { };
+declare global {
+  interface Window {
+    $vueApp: any;
+  }
 }

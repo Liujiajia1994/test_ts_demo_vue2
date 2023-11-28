@@ -8,29 +8,34 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import topBanner from "@/components/home/topBanner/index.vue"; // @ is an alias to /src
-import formulaList from "@/components/home/formulaList/index.vue";
+import { defineComponent } from 'vue';
+import topBanner from '@/components/home/topBanner/index.vue' // @ is an alias to /src
+import formulaList from '@/components/home/formulaList/index.vue'
 
-@Component({
+export default defineComponent({
   components: {
     topBanner,
     formulaList,
   },
-})
-export default class HomeView extends Vue {
-  message: string = "hello vue";
-  text: string = "";
-  onClick(): void {
-    window.alert(this.message)
+  data() {
+    return {
+      message: 'hello vue',
+      text: ''
+    }
+  },
+  methods: {
+    onClick(): void {
+      window.alert(this.message)
+    }   
   }
-}
+})
 </script>
+
 <style lang="scss" scoped>
 .home {
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, #edf3f9 50%,  #fff 100%)
+  background: linear-gradient(0deg, #edf3f9 50%, #fff 100%);
 }
 .top_banner {
   width: 100%;
@@ -45,7 +50,7 @@ export default class HomeView extends Vue {
 .menu_select {
   width: 100%;
   height: 150px;
-  background-color:bisque;
+  background-color: bisque;
 }
 .middle_banner {
   width: 100%;
@@ -68,4 +73,3 @@ export default class HomeView extends Vue {
   background-color: cadetblue;
 }
 </style>
-

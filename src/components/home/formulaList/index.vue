@@ -1,43 +1,58 @@
 <template>
   <div class="list_container">
-    <div v-for="(item, index) in formulaList" :key="index" class="item" @click="jumpToCalculator(item)">
+    <div
+      v-for="(item, index) in formulaList"
+      :key="index"
+      class="item"
+      @click="jumpToCalculator(item)"
+    >
       <span>{{ item.name }}</span>
       <img src="@/assets/arrow.png" />
     </div>
   </div>
-  
 </template>
+
 <script lang="ts">
-import { Vue } from "vue-property-decorator";
+import { defineComponent } from 'vue';
 interface Formula {
   name: string
   id: number
 }
-interface FormulaList {
-  [index: number]: Formula
-}
-export default class calcuList extends Vue{
-  formulaList: FormulaList = [
-    {
-      name: '等额本息',
-      id: 1,
-    }, {
-      name: '等额本金',
-      id: 2,
-    }, {
-      name: '先息后本',
-      id: 3,
-    }, {
-      name: '先本后息',
-      id: 4,
+// interface FormulaList {
+//   [index: number]: Formula
+// }
+export default defineComponent({
+  data() {
+    return {
+      formulaList: [
+        {
+          name: '等额本息',
+          id: 1,
+        },
+        {
+          name: '等额本金',
+          id: 2,
+        },
+        {
+          name: '先息后本',
+          id: 3,
+        },
+        {
+          name: '先本后息',
+          id: 4,
+        },
+      ]
     }
-  ]
-  jumpToCalculator(item: Formula): void {
-    let id: string = String(item.id);
-    this.$router.push({ name: 'calculator', params: { id: id } });
+  },
+  methods: {
+    jumpToCalculator(item: Formula): void {
+      let id: string = String(item.id)
+      this.$router.push({ name: 'calculator', params: { id } })
+    }
   }
-}
+})
 </script>
+
 <style lang="scss" scoped>
 .list_container {
   display: flex;
@@ -56,11 +71,11 @@ export default class calcuList extends Vue{
     padding-bottom: 20px;
     font-size: 14px;
     border-bottom: 1px solid #f7f7f7;
-    >img {
+    > img {
       width: 8px;
       height: 8px;
     }
-    >span {
+    > span {
       flex: 1;
     }
   }
